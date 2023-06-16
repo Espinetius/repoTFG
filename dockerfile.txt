@@ -1,0 +1,20 @@
+# Usa una imagen base adecuada para tu aplicación
+FROM liaisonintl/mssql-server-linux
+
+# Copia el archivo requirements.txt al contenedor
+COPY requirements.txt
+COPY app.py
+
+# Instala las dependencias del proyecto
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+# Establece el directorio de trabajo en /app
+WORKDIR /app
+
+
+# Expone el puerto en el que se ejecutará tu aplicación (ajústalo según sea necesario)
+EXPOSE 1433
+
+# Define el comando para ejecutar tu aplicación
+CMD ["python", "app.py"]
