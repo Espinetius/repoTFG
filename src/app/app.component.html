@@ -1,0 +1,13 @@
+<app-header-dandelion></app-header-dandelion>
+<ng-container *ngIf="!loggeado">
+    <app-login-dandelion *ngIf="showLogin" (registerClicked)="switchToRegistration()"
+        (loggingClicked)="switchLogged()"></app-login-dandelion>
+    <app-register-dandelion *ngIf="showRegistration"></app-register-dandelion>
+</ng-container>
+<ng-container *ngIf="loggeado">
+    <app-index *ngIf="showIndex" (repoClicked)="switchToRepo()" (configUserClicked)="switchToConfigUser()"></app-index>
+    <app-repo *ngIf="showRepo" (indexClicked)="switchToIndex()" (configUserClicked)="switchToConfigUser()"></app-repo>
+    <app-config-user *ngIf="showConfigUser" (indexClicked)="switchToIndex()"
+        (repoClicked)="switchToRepo()"></app-config-user>
+</ng-container>
+<app-footer-dandelion></app-footer-dandelion>

@@ -1,0 +1,57 @@
+<div class="limiter">
+    <div class="container-register d-flex align-items-center justify-content-center">
+        <div class="wrap-register">
+            <div class="register-pic js-tilt" data-tilt>
+                <img src="assets/images/dandelion-logo.png" alt="IMG">
+            </div>
+
+            <form class="register-form validate-form" (ngSubmit)="registerUser()" #registerForm="ngForm">
+                <span class="register-form-title">
+                    Register
+                </span>
+
+                <div class="wrap-input validate-input" data-validate="Name is required">
+                    <label>
+                        <input class="input" name="name" placeholder="Name" type="text" id="nameRegister"
+                            [(ngModel)]="user.name" required>
+                    </label>
+                    <span class="focus-input"></span>
+                    <span class="symbol-input"></span>
+                </div>
+
+                <div class="wrap-input validate-input" data-validate="User Name is required">
+                    <label>
+                        <input class="input" type="text" name="username" placeholder="User Name" id="nameuserRegister"
+                            [(ngModel)]="user.username" required>
+                    </label>
+                    <span class="focus-input"></span>
+                    <span class="symbol-input"></span>
+                </div>
+
+                <div class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <label>
+                        <input class="input" type="email" name="email" placeholder="Email" id="mailRegister"
+                            [(ngModel)]="user.email" required>
+                    </label>
+                    <span class="focus-input"></span>
+                    <span class="symbol-input"></span>
+                </div>
+
+                <div class="wrap-input validate-input" data-validate="Password is required">
+                    <label>
+                        <input class="input" type="password" name="password" placeholder="Password"
+                            id="passwordRegister" [(ngModel)]="user.password" required>
+                    </label>
+                    <span class="focus-input"></span>
+                    <span class="symbol-input"></span>
+                </div>
+
+                <div class="container-register-form-btn">
+                    <button type="submit" class="register-form-btn" id="register" [disabled]="!registerForm.valid">
+                        Start Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
